@@ -1,0 +1,59 @@
+PODS:
+  - Flutter (1.0.0)
+  - UMCCommonLog (2.0.2)
+  - UMCommon (7.3.5):
+    - UMDevice
+  - UMDevice (2.1.0)
+  - umeng_common_sdk (0.0.1):
+    - Flutter
+    - UMCommon
+    - UMDevice
+  - umeng_push_sdk (0.0.1):
+    - Flutter
+    - UMCCommonLog
+    - UMCommon
+    - UMDevice
+    - UMPush
+  - UMPush (4.0.0):
+    - UMCommon
+  - wisdom_umeng (0.0.1):
+    - Flutter
+    - UMCommon
+    - UMPush
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - umeng_common_sdk (from `.symlinks/plugins/umeng_common_sdk/ios`)
+  - umeng_push_sdk (from `.symlinks/plugins/umeng_push_sdk/ios`)
+  - wisdom_umeng (from `.symlinks/plugins/wisdom_umeng/ios`)
+
+SPEC REPOS:
+  trunk:
+    - UMCCommonLog
+    - UMCommon
+    - UMDevice
+    - UMPush
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  umeng_common_sdk:
+    :path: ".symlinks/plugins/umeng_common_sdk/ios"
+  umeng_push_sdk:
+    :path: ".symlinks/plugins/umeng_push_sdk/ios"
+  wisdom_umeng:
+    :path: ".symlinks/plugins/wisdom_umeng/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  UMCCommonLog: bea707e50c85cef4b0eb47cc5c7226bb843245ca
+  UMCommon: ab4d875ddefe1b06c60b577e4a58bc4d433ee067
+  UMDevice: 04948a92184e8d25f1369b635dff5490c1f063e0
+  umeng_common_sdk: a8abd7f86dfd013dbbeeae587ee143760c6582f2
+  umeng_push_sdk: ec5a07d1b752e3910bd0679cc9e65c29032319ce
+  UMPush: fa3407d8316e002d704f7ea35d194787e47e6df4
+  wisdom_umeng: 674bf4235c9426e8a045447646f0a1e8e754e6a7
+
+PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+
+COCOAPODS: 1.10.1

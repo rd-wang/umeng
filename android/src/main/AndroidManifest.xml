@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.roobo.wisdomUmeng.wisdom_umeng" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        tools:overrideLibrary="com.huawei.hms.framework.common,com.huawei.hms.framework.network.grs,com.huawei.hmf.tasks,com.huawei.agconnect.core,com.huawei.hms.log,com.huawei.hms.base.device,com.huawei.hms.base.ui,com.huawei.hms.stats,com.huawei.hms.base.availableupdate,com.huawei.android.hms.base,com.huawei.android.hms.openid,org.android.agoo.oppo,com.vivo.push,org.android.agoo.vivo,org.android.agoo.meizu,com.huawei.android.hms.push,org.android.agoo.huawei,com.heytap.mcssdk,com.huawei.hms.hatool,com.huawei.hms.framework.network.frameworkcompat" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+
+    <application
+        android:allowBackup="true"
+        tools:replace="android:allowBackup">
+<!--        android:icon="@mipmap/ic_launcher-->
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <!-- 友盟配置 -->
+        <activity
+            android:name="com.roobo.wisdomUmeng.wisdom_umeng.umeng.MfrMessageActivity"
+            android:exported="true"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="${applicationId}"
+                    android:path="/thirdpush"
+                    android:scheme="agoo" />
+            </intent-filter>
+        </activity> <!-- 魅族 start -->
+        <!-- push应用定义消息receiver声明 -->
+        <receiver
+            android:name="com.roobo.wisdomUmeng.wisdom_umeng.umeng.MfrMzMessageReceiver"
+            android:exported="true" >
+            <intent-filter>
+
+                <!-- 接收push消息 -->
+                <action android:name="com.meizu.flyme.push.intent.MESSAGE" />
+                <!-- 接收register消息 -->
+                <action android:name="com.meizu.flyme.push.intent.REGISTER.FEEDBACK" />
+                <!-- 接收unregister消息 -->
+                <action android:name="com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK" />
+                <!-- 兼容低版本Flyme3推送服务配置 -->
+                <action android:name="com.meizu.c2dm.intent.REGISTRATION" />
+                <action android:name="com.meizu.c2dm.intent.RECEIVE" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
