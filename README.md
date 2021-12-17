@@ -25,7 +25,8 @@ WisdomUmeng
 androidAppKey 友盟平台安卓应用app_key
 iosAppKey     友盟平台ios应用app_key
 channel       可不传，
-channelsKey   主要针对安卓平台中各个厂商的平台注册账号：规则如下
+channelsKey   主要针对安卓平台中各个厂商的平台注册账号，建议使用json文件的形式：规则如下
+
 {
     "ios_app_key" : "61711e2ae0f9bb492b382e10",
     "ios_master_secret": "7gvel6ey6f3cqtx5oarfgqhdh6locwpk",
