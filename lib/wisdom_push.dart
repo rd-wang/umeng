@@ -43,9 +43,9 @@ class WisdomPush {
   }
 
   static Future<String> getPushToken() async {
-    String pushToken = await UmengPushSdk.getRegisteredId();
+    String ? pushToken = await UmengPushSdk.getRegisteredId();
     print("WisdomPush_____pushToken______$pushToken");
-    return pushToken;
+    return pushToken!;
   }
 
   // 添加消息推送回调，根据自己的协议，自行解析
