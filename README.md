@@ -51,7 +51,10 @@ channelsKey   主要针对安卓平台中各个厂商的平台注册账号，建
     "android_oppo_app_key":"291aed75a8454943938f389bb068accb",
     "android_oppo_master_secret":"36530c85d976412392c646a73d283f87",
 
-    "android_channel" : "Umeng"
+    "android_channel" : "Umeng",
+
+    "push":true,
+    "statistic":true
 }
 
 static Future<dynamic> initUmeng(String androidAppKey,String iosAppKey,Map<String,dynamic> channelsKey,{String channel = 'Umeng'})

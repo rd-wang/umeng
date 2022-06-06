@@ -21,8 +21,12 @@ class WisdomUmeng {
   static Future<dynamic> initUmeng(String androidAppKey,String iosAppKey,Map<String,dynamic> channelsKey,{String channel = 'Umeng'}) {
     UmengCommonSdk.initCommon(androidAppKey, iosAppKey, channel);
     final dynamic result = methodChannel.invokeMethod("init",channelsKey);
-    WisdomCount.statisticConfiger();
-    WisdomPush.pushConfiger();
+    if (channelsKey['statistic'] != null && channelsKey['statistic']) {
+      WisdomCount.statisticConfiger();
+    }
+    if (channelsKey['push'] != null && channelsKey['push']) {
+      WisdomPush.pushConfiger();
+    }
     return result;
   }
 }
