@@ -49,7 +49,7 @@ public class WisdomUmengPlugin implements FlutterPlugin, MethodCallHandler {
       result.success(true);
     } else if (call.method.equals("agree")) {
       Log.i(TAG, "agree_______________________");
-      PushHelper.init(mContext);
+//      PushHelper.init(mContext);
       MyPreferences.getInstance(mContext).setAgreePrivacyAgreement(true);
       return;
     } else if (call.method.equals("askNotificationState")) {
