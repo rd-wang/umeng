@@ -11,9 +11,6 @@ import android.os.Build;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-import com.roobo.wisdomUmeng.wisdom_umeng.umeng.MyPreferences;
-import com.roobo.wisdomUmeng.wisdom_umeng.umeng.PushConstants;
-import com.roobo.wisdomUmeng.wisdom_umeng.umeng.PushHelper;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -49,31 +46,7 @@ public class WisdomUmengPlugin implements FlutterPlugin, MethodCallHandler {
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("init")) {
-      Map<String,String> map = (Map<String, String>) call.arguments;
-      if (map.containsKey("android_app_key")) {
-        PushConstants.APP_KEY = map.get("android_app_key");
-      } else if (map.containsKey("android_message_secret")) {
-        PushConstants.MESSAGE_SECRET = map.get("android_message_secret");
-      } else if (map.containsKey("android_xiaomi")) {
-        PushConstants.MI_ID = map.get("android_xiaomi");
-      } else if (map.containsKey("android_huawei_app_id")) {
-        PushConstants.HUA_WEI_ID = map.get("android_huawei_app_id");
-      } else if (map.containsKey("android_huawei_secret")) {
-        PushConstants.HUA_WEI_SECRET = map.get("android_huawei_secret");
-      } else if (map.containsKey("android_vivo_app_id")) {
-        PushConstants.VIVO_ID = map.get("android_vivo_app_id");
-      } else if (map.containsKey("android_vivo_app_key")) {
-        PushConstants.VIVO_KEY = map.get("android_vivo_app_key");
-      } else if (map.containsKey("android_vivo_app_secret")) {
-        PushConstants.VIVO_SECRET = map.get("android_vivo_app_secret");
-      } else if (map.containsKey("android_oppo_app_key")) {
-        PushConstants.OPPO_KEY = map.get("android_oppo_app_key");
-      } else if (map.containsKey("android_oppo_master_secret")) {
-        PushConstants.OPPO_SECRET = map.get("android_oppo_master_secret");
-      } else if (map.containsKey("android_channel")) {
-        PushConstants.CHANNEL = map.get("android_channel");
-      }
-      return;
+      result.success(true);
     } else if (call.method.equals("agree")) {
       Log.i(TAG, "agree_______________________");
       PushHelper.init(mContext);

@@ -30,7 +30,7 @@ class WisdomCount {
   }
 
   //自定义事件
-  static void event(String event, Map<String, dynamic> properties) {
+  static void event(String event, Map<String, dynamic>? properties) {
     UmengCommonSdk.onEvent(event, properties ?? {event: event});
     print('统计：WisdomUmeng______event___' + event);
   }

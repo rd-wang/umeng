@@ -16,15 +16,13 @@ class WisdomUmeng {
     return version;
   }
 
-  // 参数说明
-  // channelsKey 作为友盟统计各个平台申请的key和秘钥等等,主要针对安卓平台，规则readme
-  static Future<dynamic> initUmeng(String androidAppKey,String iosAppKey,Map<String,dynamic> channelsKey,{String channel = 'Umeng'}) {
+  static Future<dynamic> initUmeng(String androidAppKey,String iosAppKey,{bool isStatistic = true,bool isPush = true,String channel = 'Umeng'}) {
     UmengCommonSdk.initCommon(androidAppKey, iosAppKey, channel);
-    final dynamic result = methodChannel.invokeMethod("init",channelsKey);
-    if (channelsKey['statistic'] != null && channelsKey['statistic']) {
+    final dynamic result = methodChannel.invokeMethod("init");
+    if (isStatistic) {
       WisdomCount.statisticConfiger();
     }
-    if (channelsKey['push'] != null && channelsKey['push']) {
+    if (isPush) {
       WisdomPush.pushConfiger();
     }
     return result;
