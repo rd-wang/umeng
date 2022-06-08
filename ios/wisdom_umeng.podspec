@@ -17,7 +17,7 @@ A new flutter plugin project.
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.platform = :ios, '9.0'
-#  s.static_framework = true
+  s.static_framework = true
 
   s.dependency 'UMCommon'
   s.dependency 'UMPush'
