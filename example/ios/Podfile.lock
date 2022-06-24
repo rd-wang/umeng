@@ -1,5 +1,6 @@
 PODS:
   - Flutter (1.0.0)
+  - UMAPM (1.6.3)
   - UMCCommonLog (2.0.2)
   - UMCommon (7.3.5):
     - UMDevice
@@ -18,7 +19,9 @@ PODS:
     - UMCommon
   - wisdom_umeng (0.0.1):
     - Flutter
+    - UMAPM
     - UMCommon
+    - UMDevice
     - UMPush
 
 DEPENDENCIES:
@@ -29,6 +32,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - UMAPM
     - UMCCommonLog
     - UMCommon
     - UMDevice
@@ -46,13 +50,14 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  UMAPM: 76db9514ceb4c94c44cfa143498860626ca0dda5
   UMCCommonLog: bea707e50c85cef4b0eb47cc5c7226bb843245ca
   UMCommon: ab4d875ddefe1b06c60b577e4a58bc4d433ee067
   UMDevice: 04948a92184e8d25f1369b635dff5490c1f063e0
   umeng_common_sdk: a8abd7f86dfd013dbbeeae587ee143760c6582f2
   umeng_push_sdk: ec5a07d1b752e3910bd0679cc9e65c29032319ce
   UMPush: fa3407d8316e002d704f7ea35d194787e47e6df4
-  wisdom_umeng: 674bf4235c9426e8a045447646f0a1e8e754e6a7
+  wisdom_umeng: 72e120a14e6d4753ea3c3eb099984af2fc7f78f4
 
 PODFILE CHECKSUM: 002d655c29519d40ad6cd58cce1577925cbce3f1
 

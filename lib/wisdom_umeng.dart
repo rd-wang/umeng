@@ -27,4 +27,8 @@ class WisdomUmeng {
     }
     return result;
   }
+
+  static pushErrors(String errorStr) {
+    methodChannel.invokeListMethod("pushError",errorStr);
+  }
 }

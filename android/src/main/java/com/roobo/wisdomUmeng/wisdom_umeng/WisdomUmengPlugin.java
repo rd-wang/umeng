@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
 
+import com.umeng.commonsdk.internal.crash.UMCrashManager;
+import com.umeng.umcrash.UMCrash;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -55,6 +58,9 @@ public class WisdomUmengPlugin implements FlutterPlugin, MethodCallHandler {
     } else if (call.method.equals("askNotificationState")) {
       boolean isOpen = isNotificationEnabled(mContext);
       result.success(isOpen);
+    } else if (call.method.equals("pushError")) {
+      UMCrash.generateCustomLog("","");
+      result.success(true);
     } else {
       result.notImplemented();
     }

@@ -21,6 +21,9 @@ A new flutter plugin project.
 
   s.dependency 'UMCommon'
   s.dependency 'UMPush'
+  s.dependency 'UMDevice'
+  s.dependency 'UMAPM'
+
 #  s.dependency 'UMCommonLog'
 
   # Flutter.framework does not contain a i386 slice.
