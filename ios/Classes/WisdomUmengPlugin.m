@@ -35,7 +35,16 @@ static NSString * const kMsgChannelName = @"WisdomMessageEventChannel";
     } else if ([@"init" isEqualToString:call.method]) {
         result(@YES);
     } else if ([@"pushError" isEqualToString:call.method]) {
-        [UMCrashConfigure reportExceptionWithName:@"" reason:@"" stackTrace:@[]];
+        NSDictionary *dict = call.arguments;
+        id object = dict[@"error"];
+        NSString * stackTree = dict[@"stack"];
+        if (stackTree == nil) {
+            stackTree = @"未取到flutter传值";
+        }
+        if (object == nil) {
+            object = @"";
+        }
+        [UMCrashConfigure reportExceptionWithName:@"flutter_ios_error" reason:@"见stackTrace" stackTrace:@[object,stackTree]];
         result(@YES);
     } else {
         result(FlutterMethodNotImplemented);

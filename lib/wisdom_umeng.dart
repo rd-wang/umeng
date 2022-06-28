@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/services.dart';
@@ -12,11 +11,13 @@ class WisdomUmeng {
       const MethodChannel('wisdom_umeng');
 
   static Future<String> get platformVersion async {
-    final String version = await methodChannel.invokeMethod('getPlatformVersion');
+    final String version =
+        await methodChannel.invokeMethod('getPlatformVersion');
     return version;
   }
 
-  static Future<dynamic> initUmeng(String androidAppKey,String iosAppKey,{bool isStatistic = true,bool isPush = true,String channel = 'Umeng'}) {
+  static Future<dynamic> initUmeng(String androidAppKey, String iosAppKey,
+      {bool isStatistic = true, bool isPush = true, String channel = 'Umeng'}) {
     UmengCommonSdk.initCommon(androidAppKey, iosAppKey, channel);
     final dynamic result = methodChannel.invokeMethod("init");
     if (isStatistic) {
@@ -28,7 +29,7 @@ class WisdomUmeng {
     return result;
   }
 
-  static pushErrors(String errorStr) {
-    methodChannel.invokeListMethod("pushError",errorStr);
+  static pushErrors(Map<String, dynamic> error) {
+    methodChannel.invokeListMethod("pushError", error);
   }
 }

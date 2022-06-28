@@ -59,7 +59,8 @@ public class WisdomUmengPlugin implements FlutterPlugin, MethodCallHandler {
       boolean isOpen = isNotificationEnabled(mContext);
       result.success(isOpen);
     } else if (call.method.equals("pushError")) {
-      UMCrash.generateCustomLog("","");
+      String stackTree  = call.argument("stack");
+      UMCrash.generateCustomLog(stackTree,"flutter_android");
       result.success(true);
     } else {
       result.notImplemented();
